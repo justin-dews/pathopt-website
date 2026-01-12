@@ -154,12 +154,33 @@ These sections have been hidden from the website until the case study content is
 
 ---
 
+## 5. Homepage Hero - Case Study Button
+
+**File:** `src/components/sections/Hero.tsx`
+
+**Location:** Lines 133-137 in the CTAs section
+
+**What was hidden:** The secondary CTA button "Watch How We Fixed a $47 Lead Problem in 30 Days"
+
+```tsx
+{/* Hidden until case study content is ready
+<Button href="/case-studies/homeworks-construction" variant="secondary">
+  Watch How We Fixed a $47 Lead Problem in 30 Days
+</Button>
+*/}
+```
+
+**To restore:** Uncomment the Button component.
+
+---
+
 ## Summary
 
 | Location | Section Hidden | File |
 |----------|---------------|------|
 | Navbar | "Case Studies" link | `Navbar.tsx` |
 | Navbar dropdown | Featured Case Study column | `Navbar.tsx` |
+| Homepage | "Watch How We Fixed..." button | `Hero.tsx` |
 | /services/performance-marketing | Case study preview card | `performance-marketing/page.tsx` |
 | /industries/trades-home-services | Hero secondary CTA + entire Results section | `trades-home-services/page.tsx` |
 

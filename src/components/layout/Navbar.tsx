@@ -130,7 +130,10 @@ export function Navbar() {
                 setHowWeHelpOpen(!howWeHelpOpen);
                 setIndustriesOpen(false);
               }}
-              onMouseEnter={() => setHowWeHelpOpen(true)}
+              onMouseEnter={() => {
+                setHowWeHelpOpen(true);
+                setIndustriesOpen(false);
+              }}
             >
               How We Help
               <ChevronDown
@@ -217,7 +220,10 @@ export function Navbar() {
                 setIndustriesOpen(!industriesOpen);
                 setHowWeHelpOpen(false);
               }}
-              onMouseEnter={() => setIndustriesOpen(true)}
+              onMouseEnter={() => {
+                setIndustriesOpen(true);
+                setHowWeHelpOpen(false);
+              }}
             >
               Industries
               <ChevronDown

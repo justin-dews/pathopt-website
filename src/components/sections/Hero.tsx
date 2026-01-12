@@ -130,9 +130,11 @@ export function Hero() {
               <Button href="/contact">
                 See Where You&apos;re Leaving Money on the Table
               </Button>
+              {/* Hidden until case study content is ready
               <Button href="/case-studies/homeworks-construction" variant="secondary">
                 Watch How We Fixed a $47 Lead Problem in 30 Days
               </Button>
+              */}
             </motion.div>
           </div>
 
