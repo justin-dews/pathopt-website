@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Mail, Phone, Linkedin, Facebook, Instagram, Youtube } from 'lucide-react';
 
 const footerLinks = {
@@ -42,30 +43,32 @@ export function Footer() {
           <div className="lg:col-span-1 max-w-[280px]">
             <Link
               href="/"
-              className="font-[family-name:var(--font-display)] text-2xl font-semibold tracking-tight text-[var(--color-text)] mb-4 block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-accent)]"
+              className="mb-4 block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-accent)]"
               aria-label="PathOpt - Go to homepage"
             >
-              Path<span className="text-[var(--color-accent)]">Opt</span>
+              <Image
+                src="/images/pathopt-logo-transparent.png"
+                alt="PathOpt"
+                width={140}
+                height={40}
+              />
             </Link>
-            <p className="text-[0.95rem] text-[var(--color-brown)] mb-8 leading-relaxed">
-              Navigate. Optimize. Secure. Three business owners helping you grow with complete transparency.
-            </p>
 
             {/* Contact Info */}
             <address className="not-italic space-y-2 mb-6">
               <a
-                href="mailto:hello@pathopt.ai"
+                href="mailto:info@pathopt.com"
                 className="flex items-center gap-2 text-[0.9rem] text-[var(--color-text)] hover:text-[var(--color-accent)] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] rounded-sm"
               >
                 <Mail className="w-[18px] h-[18px] text-[var(--color-accent)]" aria-hidden="true" />
-                <span>hello@pathopt.ai</span>
+                <span>info@pathopt.com</span>
               </a>
               <a
-                href="tel:+1234567890"
+                href="tel:+14695177284"
                 className="flex items-center gap-2 text-[0.9rem] text-[var(--color-text)] hover:text-[var(--color-accent)] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] rounded-sm"
               >
                 <Phone className="w-[18px] h-[18px] text-[var(--color-accent)]" aria-hidden="true" />
-                <span>(123) 456-7890</span>
+                <span>(469) 517-7284</span>
               </a>
             </address>
 

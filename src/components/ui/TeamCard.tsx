@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface TeamCardProps {
   name: string;
   title: string;
@@ -11,16 +13,27 @@ export function TeamCard({
   title,
   bio,
   philosophy,
+  imageUrl,
 }: TeamCardProps) {
   return (
     <div className="group relative bg-white rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-      {/* Photo Placeholder */}
+      {/* Photo */}
       <div className="relative aspect-[4/5] bg-[var(--color-green-light)] overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-wider text-[var(--color-green)]">
-            Photo
-          </span>
-        </div>
+        {imageUrl ? (
+          <Image
+            src={imageUrl}
+            alt={name}
+            fill
+            className="object-cover object-top"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-wider text-[var(--color-green)]">
+              Photo
+            </span>
+          </div>
+        )}
         {/* Accent bar on hover */}
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-[var(--color-accent)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
       </div>

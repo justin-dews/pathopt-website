@@ -109,12 +109,13 @@ const proofData = {
       label: 'Complete visibility into spend—know exactly where every dollar goes, every day',
     },
   ],
-  caseStudy: {
-    title: 'HomeWorks Construction and Remodeling',
-    description:
-      'Before PathOpt: $47 cost per lead. Unclear which campaigns were working. Frustrated with agency lack of transparency. After 30 days: $27 cost per lead. Tripled qualified leads. Reduced total spend while increasing results. Complete visibility into every campaign.',
-    href: '/case-studies/homeworks-construction',
-  },
+  // Case study hidden until content is ready
+  // caseStudy: {
+  //   title: 'HomeWorks Construction and Remodeling',
+  //   description:
+  //     'Before PathOpt: $47 cost per lead. Unclear which campaigns were working. Frustrated with agency lack of transparency. After 30 days: $27 cost per lead. Tripled qualified leads. Reduced total spend while increasing results. Complete visibility into every campaign.',
+  //   href: '/case-studies/homeworks-construction',
+  // },
 };
 
 // Who It's For Data

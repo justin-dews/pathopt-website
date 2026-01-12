@@ -3,7 +3,7 @@ import { IndustryHero } from '@/components/sections/IndustryHero';
 import { IndustryProblemSection } from '@/components/sections/IndustryProblemSection';
 import { AgitateSection } from '@/components/sections/AgitateSection';
 import { IndustrySolutionSection } from '@/components/sections/IndustrySolutionSection';
-import { IndustryProofSection } from '@/components/sections/IndustryProofSection';
+// import { IndustryProofSection } from '@/components/sections/IndustryProofSection'; // Hidden until case study content is ready
 import { FitSection } from '@/components/sections/FitSection';
 import { FAQAccordion } from '@/components/sections/FAQAccordion';
 import { FinalCTASection } from '@/components/sections/FinalCTASection';
@@ -47,10 +47,11 @@ const heroData = {
     text: 'Get Your Free Marketing Performance Audit',
     href: '/contact',
   },
-  secondaryCTA: {
-    text: 'See the HomeWorks Case Study',
-    href: '/case-studies/homeworks-construction',
-  },
+  // Secondary CTA hidden until case study content is ready
+  // secondaryCTA: {
+  //   text: 'See the HomeWorks Case Study',
+  //   href: '/case-studies/homeworks-construction',
+  // },
 };
 
 const problemData = {
@@ -142,39 +143,40 @@ const solutionData = {
   ],
 };
 
-const proofData = {
-  label: 'Results',
-  headline: 'HomeWorks Construction: From $47 to $27 Cost Per Lead in 30 Days',
-  situation:
-    "HomeWorks Construction and Remodeling was spending $4,500/month on digital marketing. They were getting leads—but had no idea if they were getting their money's worth. Sound familiar?",
-  problemTitle: 'The Problem:',
-  problemBullets: [
-    'Cost per lead: $47 (industry average, nothing special)',
-    'Lead quality: Mixed—lots of tire-kickers, not enough serious buyers',
-    'Reporting: Monthly PDF nobody understood',
-    'Optimization: Set-it-and-forget-it',
-  ],
-  solutionTitle: 'What We Did:',
-  solutionBullets: [
-    'Complete account transparency (they could see everything, anytime)',
-    'Lead quality tracking (not just quantity—quality)',
-    'Daily optimization (not monthly check-ins)',
-    'Cost per lead focus (the metric that actually matters)',
-  ],
-  resultsTitle: 'The Results (30 Days):',
-  results: [
-    { label: 'Cost per lead', value: '$47 → $27' },
-    { label: 'Qualified leads', value: 'Tripled' },
-    { label: 'Marketing spend', value: 'Reduced' },
-    { label: 'ROI', value: 'Finally measurable' },
-  ],
-  quote:
-    'For the first time, I actually know what my marketing is doing. I can see it. Every day. That alone is worth the investment.',
-  quoteAuthor: 'Chad',
-  quoteCompany: 'HomeWorks Construction',
-  ctaText: 'Read the Full Case Study',
-  ctaHref: '/case-studies/homeworks-construction',
-};
+// Hidden until case study content is ready
+// const proofData = {
+//   label: 'Results',
+//   headline: 'HomeWorks Construction: From $47 to $27 Cost Per Lead in 30 Days',
+//   situation:
+//     "HomeWorks Construction and Remodeling was spending $4,500/month on digital marketing. They were getting leads—but had no idea if they were getting their money's worth. Sound familiar?",
+//   problemTitle: 'The Problem:',
+//   problemBullets: [
+//     'Cost per lead: $47 (industry average, nothing special)',
+//     'Lead quality: Mixed—lots of tire-kickers, not enough serious buyers',
+//     'Reporting: Monthly PDF nobody understood',
+//     'Optimization: Set-it-and-forget-it',
+//   ],
+//   solutionTitle: 'What We Did:',
+//   solutionBullets: [
+//     'Complete account transparency (they could see everything, anytime)',
+//     'Lead quality tracking (not just quantity—quality)',
+//     'Daily optimization (not monthly check-ins)',
+//     'Cost per lead focus (the metric that actually matters)',
+//   ],
+//   resultsTitle: 'The Results (30 Days):',
+//   results: [
+//     { label: 'Cost per lead', value: '$47 → $27' },
+//     { label: 'Qualified leads', value: 'Tripled' },
+//     { label: 'Marketing spend', value: 'Reduced' },
+//     { label: 'ROI', value: 'Finally measurable' },
+//   ],
+//   quote:
+//     'For the first time, I actually know what my marketing is doing. I can see it. Every day. That alone is worth the investment.',
+//   quoteAuthor: 'Chad',
+//   quoteCompany: 'HomeWorks Construction',
+//   ctaText: 'Read the Full Case Study',
+//   ctaHref: '/case-studies/homeworks-construction',
+// };
 
 const fitData = {
   headline: 'Is This Right for Your Business?',
@@ -244,8 +246,8 @@ export default function TradesHomeServicesPage() {
         {/* Solution Section */}
         <IndustrySolutionSection {...solutionData} />
 
-        {/* Proof Section (Case Study) */}
-        <IndustryProofSection {...proofData} />
+        {/* Proof Section (Case Study) - Hidden until case study content is ready */}
+        {/* <IndustryProofSection {...proofData} /> */}
 
         {/* Fit Section */}
         <FitSection {...fitData} />

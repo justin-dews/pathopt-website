@@ -78,6 +78,7 @@ const teamData = {
       bio: "Justin has spent 15+ years helping small businesses run smarter. From building and scaling an IT services company to advising owners on growth strategy, he's been on both sides of the table—as the business owner and as the expert brought in to help.",
       philosophy:
         'I started PathOpt because I was tired of watching small business owners get burned by agencies that charge high fees and deliver low transparency.',
+      imageUrl: '/images/team/justin.avif',
     },
     {
       name: 'Jeremy Stakely',
@@ -85,6 +86,7 @@ const teamData = {
       bio: "Jeremy brings financial strategy and analytical rigor to PathOpt. After building financial systems for multiple 7-figure businesses, he's the partner who ensures every investment delivers measurable returns.",
       philosophy:
         "If you can't see the ROI in plain numbers, something's wrong.",
+      imageUrl: '/images/team/jeremy.avif',
     },
     {
       name: 'Reese Ormand',
@@ -92,6 +94,7 @@ const teamData = {
       bio: 'Reese has built and advised multiple businesses across different industries. His strategic thinking helps clients see the bigger picture—identifying opportunities, avoiding costly mistakes, and accelerating growth by 6-12 months.',
       philosophy:
         "Business advice is worthless unless someone actually executes it.",
+      imageUrl: '/images/team/reese.avif',
     },
   ],
 };

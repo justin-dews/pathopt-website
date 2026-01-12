@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
+import Script from 'next/script';
 import { ContactHero } from '@/components/sections/ContactHero';
 import { ValueReminder } from '@/components/ui/ValueReminder';
-import { ContactForm } from '@/components/forms/ContactForm';
 import { FAQAccordion } from '@/components/sections/FAQAccordion';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
@@ -74,7 +74,26 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               {/* Form - Takes 2 columns */}
               <div className="lg:col-span-2">
-                <ContactForm />
+                <div className="bg-white rounded-lg overflow-hidden" style={{ minHeight: '950px' }}>
+                  <iframe
+                    src="https://portal.pathopt.ai/widget/form/xrmIDtjDob8A1vnBa2oo"
+                    style={{ width: '100%', height: '950px', border: 'none', borderRadius: '4px' }}
+                    id="inline-xrmIDtjDob8A1vnBa2oo"
+                    data-layout="{'id':'INLINE'}"
+                    data-trigger-type="alwaysShow"
+                    data-trigger-value=""
+                    data-activation-type="alwaysActivated"
+                    data-activation-value=""
+                    data-deactivation-type="neverDeactivate"
+                    data-deactivation-value=""
+                    data-form-name="Contact Us - New Page"
+                    data-height="884"
+                    data-layout-iframe-id="inline-xrmIDtjDob8A1vnBa2oo"
+                    data-form-id="xrmIDtjDob8A1vnBa2oo"
+                    title="Contact Us - New Page"
+                  />
+                </div>
+                <Script src="https://portal.pathopt.ai/js/form_embed.js" strategy="lazyOnload" />
               </div>
 
               {/* Contact Info Sidebar */}
@@ -93,10 +112,10 @@ export default function ContactPage() {
                           Email
                         </p>
                         <a
-                          href="mailto:hello@pathopt.com"
+                          href="mailto:info@pathopt.com"
                           className="text-[var(--color-text)] hover:text-[var(--color-accent)] transition-colors"
                         >
-                          hello@pathopt.com
+                          info@pathopt.com
                         </a>
                       </div>
                     </div>
@@ -110,10 +129,10 @@ export default function ContactPage() {
                           Phone
                         </p>
                         <a
-                          href="tel:+15551234567"
+                          href="tel:+14695177284"
                           className="text-[var(--color-text)] hover:text-[var(--color-accent)] transition-colors"
                         >
-                          (555) 123-4567
+                          (469) 517-7284
                         </a>
                       </div>
                     </div>

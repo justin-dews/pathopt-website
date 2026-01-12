@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { ChevronDown, ArrowRight, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
@@ -43,7 +44,7 @@ const industries = [
 
 const navLinks = [
   { label: 'About', href: '/about' },
-  { label: 'Case Studies', href: '/case-studies' },
+  // { label: 'Case Studies', href: '/case-studies' }, // Hidden until case study content is ready
   { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -104,10 +105,16 @@ export function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="font-[family-name:var(--font-display)] text-2xl font-semibold tracking-tight text-[var(--color-text)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-accent)]"
+          className="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-accent)]"
           aria-label="PathOpt - Go to homepage"
         >
-          Path<span className="text-[var(--color-accent)]">Opt</span>
+          <Image
+            src="/images/pathopt-logo-transparent.png"
+            alt="PathOpt"
+            width={140}
+            height={40}
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -142,7 +149,7 @@ export function Navbar() {
               aria-label="How We Help submenu"
               onMouseLeave={() => setHowWeHelpOpen(false)}
             >
-              <div className="bg-white rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.12)] p-8 grid grid-cols-2 gap-8 min-w-[600px]">
+              <div className="bg-white rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.12)] p-8 min-w-[320px]">
                 {/* Pillars Column */}
                 <div>
                   <h4 className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-widest text-[var(--color-brown)] mb-4">
@@ -168,7 +175,7 @@ export function Navbar() {
                   </div>
                 </div>
 
-                {/* Featured Case Study Column */}
+                {/* Featured Case Study Column - Hidden until case study content is ready
                 <div>
                   <h4 className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-widest text-[var(--color-brown)] mb-4">
                     Featured Case Study
@@ -194,6 +201,7 @@ export function Navbar() {
                     </Link>
                   </div>
                 </div>
+                */}
               </div>
             </div>
           </div>
