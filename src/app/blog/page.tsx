@@ -8,6 +8,25 @@ export const metadata: Metadata = {
   title: 'Blog | PathOpt - Insights for Small Business Growth',
   description:
     'Practical strategies for small business owners on operations, marketing, and growth. No fluff, no jargon—just insights you can actually use.',
+  openGraph: {
+    title: 'Blog | PathOpt - Insights for Small Business Growth',
+    description:
+      'Practical strategies for small business owners on operations, marketing, and growth. No fluff, no jargon—just insights you can actually use.',
+    type: 'website',
+    images: [{
+      url: '/og-images/og-blog-v3.png',
+      width: 1456,
+      height: 816,
+      alt: 'PathOpt Blog - Insights for Small Business Growth',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog | PathOpt - Insights for Small Business Growth',
+    description:
+      'Practical strategies for small business owners on operations, marketing, and growth.',
+    images: ['/og-images/og-blog-v3.png'],
+  },
 };
 
 export default function BlogPage() {

@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     description:
       'Talk to three business owners who\'ve been in your shoes. Get your free business assessment. No pressure, no pitch.',
     type: 'website',
+    images: [{ url: '/og-images/og-main-v3.png', width: 1456, height: 816, alt: 'Contact PathOpt' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/og-images/og-main-v3.png'],
   },
 };
 

@@ -14,6 +14,19 @@ export const metadata: Metadata = {
     description:
       'Break the feast-or-famine cycle. Build predictable growth for your consulting, accounting, or professional services firm.',
     type: 'website',
+    images: [{
+      url: '/og-images/og-main-v3.png',
+      width: 1456,
+      height: 816,
+      alt: 'Marketing for Professional Services Firms - PathOpt',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Marketing for Professional Services Firms | PathOpt',
+    description:
+      'Break the feast-or-famine cycle. Build predictable growth for your consulting, accounting, or professional services firm.',
+    images: ['/og-images/og-main-v3.png'],
   },
 };
 

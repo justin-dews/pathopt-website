@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { getAllCitySlugs } from '@/data/cities';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://pathopt.com';
@@ -17,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/industries/professional-services',
     '/industries/promotional-products',
     '/blog',
+    '/locations',
   ];
 
   // Blog posts
@@ -26,6 +28,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog/owners-guide-to-hiring-first-marketing-help',
     '/blog/stop-chasing-leads-start-building-pipeline',
   ];
+
+  // Location pages (geographic targeting)
+  const locationSlugs = getAllCitySlugs();
 
   const staticEntries: MetadataRoute.Sitemap = staticPages.map((route) => ({
     url: `${baseUrl}${route}`,
@@ -41,5 +46,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticEntries, ...blogEntries];
+  const locationEntries: MetadataRoute.Sitemap = locationSlugs.map((slug) => ({
+    url: `${baseUrl}/locations/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
+  return [...staticEntries, ...blogEntries, ...locationEntries];
 }

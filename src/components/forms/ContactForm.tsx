@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useId } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Loader2, CheckCircle, AlertCircle } from 'lucide-react';
@@ -33,6 +33,8 @@ export function ContactForm() {
   });
   const [status, setStatus] = useState<FormStatus>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const formId = useId();
+  const errorId = `${formId}-error`;
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -79,13 +81,15 @@ export function ContactForm() {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.4 }}
+        role="status"
+        aria-live="polite"
       >
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
         >
-          <CheckCircle className="w-16 h-16 text-[var(--color-green)] mx-auto mb-4" />
+          <CheckCircle className="w-16 h-16 text-[var(--color-green)] mx-auto mb-4" aria-hidden="true" />
         </motion.div>
         <motion.h3
           className="text-2xl font-bold mb-2"
@@ -110,7 +114,7 @@ export function ContactForm() {
   const inputStyles =
     'w-full px-4 py-3 rounded-md border border-[var(--color-border)] bg-white ' +
     'text-[var(--color-text)] placeholder:text-[var(--color-text-muted)]/60 ' +
-    'focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent ' +
+    'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] ' +
     'transition-all duration-200';
 
   const labelStyles = 'block text-sm font-medium text-[var(--color-text)] mb-2';
@@ -129,49 +133,63 @@ export function ContactForm() {
 
       {status === 'error' && (
         <motion.div
+          id={errorId}
           className="mb-6 p-4 bg-red-50 border border-red-200 rounded-md flex items-center gap-3"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
+          role="alert"
+          aria-live="assertive"
         >
-          <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
+          <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0" aria-hidden="true" />
           <p className="text-red-700 text-sm">{errorMessage}</p>
         </motion.div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form
+        onSubmit={handleSubmit}
+        className="space-y-6"
+        aria-describedby={status === 'error' ? errorId : undefined}
+        noValidate
+      >
         {/* Name and Email Row */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
           variants={fadeInUp}
         >
           <div>
-            <label htmlFor="name" className={labelStyles}>
-              Name <span className="text-[var(--color-accent)]">*</span>
+            <label htmlFor={`${formId}-name`} className={labelStyles}>
+              Name <span className="text-[var(--color-accent)]" aria-hidden="true">*</span>
+              <span className="sr-only">(required)</span>
             </label>
             <input
               type="text"
-              id="name"
+              id={`${formId}-name`}
               name="name"
               value={formData.name}
               onChange={handleChange}
               required
+              aria-required="true"
               className={inputStyles}
               placeholder="John Smith"
+              autoComplete="name"
             />
           </div>
           <div>
-            <label htmlFor="email" className={labelStyles}>
-              Email <span className="text-[var(--color-accent)]">*</span>
+            <label htmlFor={`${formId}-email`} className={labelStyles}>
+              Email <span className="text-[var(--color-accent)]" aria-hidden="true">*</span>
+              <span className="sr-only">(required)</span>
             </label>
             <input
               type="email"
-              id="email"
+              id={`${formId}-email`}
               name="email"
               value={formData.email}
               onChange={handleChange}
               required
+              aria-required="true"
               className={inputStyles}
               placeholder="john@company.com"
+              autoComplete="email"
             />
           </div>
         </motion.div>
@@ -182,47 +200,51 @@ export function ContactForm() {
           variants={fadeInUp}
         >
           <div>
-            <label htmlFor="phone" className={labelStyles}>
-              Phone
+            <label htmlFor={`${formId}-phone`} className={labelStyles}>
+              Phone <span className="sr-only">(optional)</span>
             </label>
             <input
               type="tel"
-              id="phone"
+              id={`${formId}-phone`}
               name="phone"
               value={formData.phone}
               onChange={handleChange}
               className={inputStyles}
               placeholder="(555) 123-4567"
+              autoComplete="tel"
             />
           </div>
           <div>
-            <label htmlFor="company" className={labelStyles}>
-              Company Name
+            <label htmlFor={`${formId}-company`} className={labelStyles}>
+              Company Name <span className="sr-only">(optional)</span>
             </label>
             <input
               type="text"
-              id="company"
+              id={`${formId}-company`}
               name="company"
               value={formData.company}
               onChange={handleChange}
               className={inputStyles}
               placeholder="Your Company"
+              autoComplete="organization"
             />
           </div>
         </motion.div>
 
         {/* Challenge Textarea */}
         <motion.div variants={fadeInUp}>
-          <label htmlFor="challenge" className={labelStyles}>
+          <label htmlFor={`${formId}-challenge`} className={labelStyles}>
             What&apos;s your biggest challenge right now?{' '}
-            <span className="text-[var(--color-accent)]">*</span>
+            <span className="text-[var(--color-accent)]" aria-hidden="true">*</span>
+            <span className="sr-only">(required)</span>
           </label>
           <textarea
-            id="challenge"
+            id={`${formId}-challenge`}
             name="challenge"
             value={formData.challenge}
             onChange={handleChange}
             required
+            aria-required="true"
             rows={4}
             className={inputStyles}
             placeholder="Tell us about your business and what you're looking to solve..."
@@ -231,11 +253,11 @@ export function ContactForm() {
 
         {/* Source Dropdown */}
         <motion.div variants={fadeInUp}>
-          <label htmlFor="source" className={labelStyles}>
-            How did you hear about PathOpt?
+          <label htmlFor={`${formId}-source`} className={labelStyles}>
+            How did you hear about PathOpt? <span className="sr-only">(optional)</span>
           </label>
           <select
-            id="source"
+            id={`${formId}-source`}
             name="source"
             value={formData.source}
             onChange={handleChange}
@@ -257,11 +279,13 @@ export function ContactForm() {
             type="submit"
             variant="primary"
             className="w-full md:w-auto"
+            disabled={status === 'submitting'}
+            aria-label={status === 'submitting' ? 'Sending your message, please wait' : 'Schedule a Conversation'}
           >
             {status === 'submitting' ? (
               <>
-                <Loader2 className="w-5 h-5 animate-spin" />
-                Sending...
+                <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" />
+                <span>Sending...</span>
               </>
             ) : (
               'Schedule a Conversation'

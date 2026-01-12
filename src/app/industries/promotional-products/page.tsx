@@ -14,6 +14,19 @@ export const metadata: Metadata = {
     description:
       'Systematize operations, optimize marketing, and scale without the chaos. Growth partners for promotional products distributors.',
     type: 'website',
+    images: [{
+      url: '/og-images/og-main-v3.png',
+      width: 1456,
+      height: 816,
+      alt: 'Marketing for Promotional Products Distributors - PathOpt',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Marketing for Promotional Products Distributors | PathOpt',
+    description:
+      'Systematize operations, optimize marketing, and scale without the chaos. Growth partners for promotional products distributors.',
+    images: ['/og-images/og-main-v3.png'],
   },
 };
 

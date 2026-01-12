@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     description:
       'PathOpt was founded by business owners frustrated with agencies that promise and consultants who don\'t execute. We built the partner we wished existed.',
     type: 'website',
+    images: [{ url: '/og-images/og-main-v3.png', width: 1456, height: 816, alt: 'About PathOpt' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/og-images/og-main-v3.png'],
   },
 };
 

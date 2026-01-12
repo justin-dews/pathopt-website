@@ -22,7 +22,6 @@ export function BenefitCard({ icon: Icon, imageSrc, imageAlt, title, description
               fill
               sizes="48px"
               className="object-cover"
-              quality={90}
             />
           </div>
         ) : Icon ? (

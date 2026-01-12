@@ -11,6 +11,19 @@ export const metadata: Metadata = {
     description:
       'Real results from real businesses. See how PathOpt helps small businesses grow with complete transparency.',
     type: 'website',
+    images: [{
+      url: '/og-images/og-main-v3.png',
+      width: 1456,
+      height: 816,
+      alt: 'Case Studies - PathOpt',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Case Studies | Real Results from PathOpt Clients',
+    description:
+      'Real results from real businesses. See how PathOpt helps small businesses grow with complete transparency.',
+    images: ['/og-images/og-main-v3.png'],
   },
 };
 

@@ -18,6 +18,19 @@ export const metadata: Metadata = {
     description:
       'How HomeWorks Construction tripled their qualified leads while reducing spend—with complete visibility into every marketing dollar.',
     type: 'article',
+    images: [{
+      url: '/og-images/og-main-v3.png',
+      width: 1456,
+      height: 816,
+      alt: 'HomeWorks Construction Case Study - PathOpt',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '$47 to $27 Cost Per Lead in 30 Days | HomeWorks Construction',
+    description:
+      'How HomeWorks Construction tripled their qualified leads while reducing spend—with complete visibility into every marketing dollar.',
+    images: ['/og-images/og-main-v3.png'],
   },
 };
 

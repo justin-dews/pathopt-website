@@ -149,7 +149,6 @@ export function Hero() {
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                 className="object-cover"
-                quality={90}
               />
               {/* Subtle overlay for better text contrast if needed */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none" />

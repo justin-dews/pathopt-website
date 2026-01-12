@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, DM_Sans, JetBrains_Mono } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { SkipLink } from "@/components/ui/SkipLink";
 import { JsonLd, organizationSchema, websiteSchema } from "@/components/seo/JsonLd";
 import "./globals.css";
 
@@ -32,16 +33,23 @@ export const metadata: Metadata = {
   description: "Three experienced business owners helping you grow, systematize, and optimize. Strategy + execution + marketing with complete transparency.",
   keywords: "small business growth partner, fractional CMO, business systematization, performance marketing, transparent marketing",
   openGraph: {
-    title: "Growth & Operations Partner for Small Business | PathOpt",
+    title: "Fractional CMO for Small Business | PathOpt",
     description: "Three experienced business owners helping you grow, systematize, and optimize. Strategy + execution + marketing with complete transparency.",
     type: "website",
     locale: "en_US",
     siteName: "PathOpt",
+    images: [{
+      url: '/og-images/og-main-v3.png',
+      width: 1456,
+      height: 816,
+      alt: 'PathOpt - Fractional CMO for Small Business',
+    }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Growth & Operations Partner for Small Business | PathOpt",
+    title: "Fractional CMO for Small Business | PathOpt",
     description: "Three experienced business owners helping you grow, systematize, and optimize.",
+    images: ['/og-images/og-main-v3.png'],
   },
 };
 
@@ -56,9 +64,12 @@ export default function RootLayout({
         <JsonLd data={organizationSchema} />
         <JsonLd data={websiteSchema} />
       </head>
-      <body className="grain-overlay antialiased">
+      <body className="grain-overlay antialiased" suppressHydrationWarning>
+        <SkipLink />
         <Navbar />
-        {children}
+        <main id="main-content" tabIndex={-1}>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

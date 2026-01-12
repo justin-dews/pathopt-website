@@ -1,18 +1,19 @@
+import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 
 export function FinalCTA() {
   return (
     <section className="bg-[var(--color-text)] text-[var(--color-bg)] py-40 relative overflow-hidden">
-      {/* Gradient Background */}
-      <div
-        className="absolute inset-0 opacity-10 pointer-events-none"
-        style={{
-          background: `
-            radial-gradient(circle at 20% 50%, var(--color-accent) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, var(--color-green) 0%, transparent 40%)
-          `,
-        }}
+      {/* Background Image */}
+      <Image
+        src="/images/finalcta1_result.avif"
+        alt=""
+        fill
+        className="object-cover"
+        priority={false}
       />
+      {/* Dark Overlay for text readability */}
+      <div className="absolute inset-0 bg-[var(--color-text)]/70" />
 
       <div className="container-site relative z-10">
         <div className="text-center max-w-[800px] mx-auto">

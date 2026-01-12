@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     title: 'Transparent Performance Marketing for Small Business | PathOpt',
     description: 'See exactly where every dollar goes. Real-time dashboards, daily optimization, 30-60% cost reduction.',
     type: 'website',
+    images: [{ url: '/og-images/og-main-v3.png', width: 1456, height: 816, alt: 'PathOpt Performance Marketing' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/og-images/og-main-v3.png'],
   },
 };
 

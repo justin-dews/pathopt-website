@@ -7,6 +7,7 @@ import { IndustryProofSection } from '@/components/sections/IndustryProofSection
 import { FitSection } from '@/components/sections/FitSection';
 import { FAQAccordion } from '@/components/sections/FAQAccordion';
 import { FinalCTASection } from '@/components/sections/FinalCTASection';
+import { JsonLd, createFAQSchema } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Marketing for Contractors & Home Services | PathOpt',
@@ -17,6 +18,19 @@ export const metadata: Metadata = {
     description:
       'Marketing that works for contractors. Complete transparency, aligned incentives, and results you can actually see.',
     type: 'website',
+    images: [{
+      url: '/og-images/og-main-v3.png',
+      width: 1456,
+      height: 816,
+      alt: 'Marketing for Contractors & Home Services - PathOpt',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Marketing for Contractors & Home Services | PathOpt',
+    description:
+      'Marketing that works for contractors. Complete transparency, aligned incentives, and results you can actually see.',
+    images: ['/og-images/og-main-v3.png'],
   },
 };
 
@@ -215,37 +229,40 @@ const finalCTAData = {
 
 export default function TradesHomeServicesPage() {
   return (
-    <main>
-      {/* Hero */}
-      <IndustryHero {...heroData} />
+    <>
+      <JsonLd data={createFAQSchema(faqData)} />
+      <main>
+        {/* Hero */}
+        <IndustryHero {...heroData} />
 
-      {/* Problem Section */}
-      <IndustryProblemSection {...problemData} />
+        {/* Problem Section */}
+        <IndustryProblemSection {...problemData} />
 
-      {/* Agitate Section */}
-      <AgitateSection {...agitateData} />
+        {/* Agitate Section */}
+        <AgitateSection {...agitateData} />
 
-      {/* Solution Section */}
-      <IndustrySolutionSection {...solutionData} />
+        {/* Solution Section */}
+        <IndustrySolutionSection {...solutionData} />
 
-      {/* Proof Section (Case Study) */}
-      <IndustryProofSection {...proofData} />
+        {/* Proof Section (Case Study) */}
+        <IndustryProofSection {...proofData} />
 
-      {/* Fit Section */}
-      <FitSection {...fitData} />
+        {/* Fit Section */}
+        <FitSection {...fitData} />
 
-      {/* FAQ Section */}
-      <section className="py-16 lg:py-24 bg-[var(--color-bg-alt)]">
-        <div className="container-content">
-          <h2 className="text-3xl font-bold mb-8 text-center">
-            Frequently Asked Questions
-          </h2>
-          <FAQAccordion items={faqData} inline />
-        </div>
-      </section>
+        {/* FAQ Section */}
+        <section className="py-16 lg:py-24 bg-[var(--color-bg-alt)]">
+          <div className="container-content">
+            <h2 className="text-3xl font-bold mb-8 text-center">
+              Frequently Asked Questions
+            </h2>
+            <FAQAccordion items={faqData} inline />
+          </div>
+        </section>
 
-      {/* Final CTA */}
-      <FinalCTASection {...finalCTAData} />
-    </main>
+        {/* Final CTA */}
+        <FinalCTASection {...finalCTAData} />
+      </main>
+    </>
   );
 }

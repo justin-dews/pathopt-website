@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     title: 'Business Systematization & Operational Excellence | PathOpt',
     description: 'Systematize your business so it scales. EOS/Traction implementation, process documentation, workflow optimization.',
     type: 'website',
+    images: [{ url: '/og-images/og-main-v3.png', width: 1456, height: 816, alt: 'PathOpt Operational Excellence' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/og-images/og-main-v3.png'],
   },
 };
 
