@@ -9,10 +9,10 @@ import { FinalCTASection } from '@/components/sections/FinalCTASection';
 export const metadata: Metadata = {
   title: 'Business Systematization & Operational Excellence | PathOpt',
   description:
-    'Systematize your business so it scales. EOS/Traction implementation, process documentation, workflow optimization for small businesses.',
+    'Systematize your business so it scales. Process documentation, workflow optimization, and scaling infrastructure for small businesses.',
   openGraph: {
     title: 'Business Systematization & Operational Excellence | PathOpt',
-    description: 'Systematize your business so it scales. EOS/Traction implementation, process documentation, workflow optimization.',
+    description: 'Systematize your business so it scales. Process documentation, workflow optimization, and scaling infrastructure.',
     type: 'website',
     images: [{ url: '/og-images/og-main-v3.png', width: 1456, height: 816, alt: 'PathOpt Operational Excellence' }],
   },
@@ -27,7 +27,7 @@ const heroData = {
   label: 'Operational Excellence',
   headline: 'Stop Being the Bottleneck in Your Own Business',
   subtitle:
-    'Systematize your operations so your business runs without you in every decision. EOS/Traction implementation, process documentation, and scaling infrastructure—at prices that make sense for small businesses.',
+    'Systematize your operations so your business runs without you in every decision. Process documentation, workflow optimization, and scaling infrastructure—at prices that make sense for small businesses.',
   primaryCTA: {
     text: 'Get Your Operations Assessment',
     href: '/contact',
@@ -65,9 +65,9 @@ const solutionData = {
     'PathOpt helps you build the operational infrastructure that growing businesses need. We don\'t just tell you to "document your processes"—we help you build the systems, train your team, and make it stick.',
   items: [
     {
-      title: 'EOS/Traction Implementation',
+      title: 'Business Operating System',
       description:
-        'The same operating system used by 200,000+ businesses—implemented at a fraction of typical EOS Implementer costs. Vision, traction, healthy teams.',
+        'A proven framework to align your team around vision, goals, and execution. Clear priorities, regular check-ins, and measurable progress.',
     },
     {
       title: 'Process Documentation & Optimization',
